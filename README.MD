@@ -1,10 +1,10 @@
 
-# FindAFriend
+# RocketMovies
 
-O RocketMovie é um site dedicado a servir de espaço para que o usuário coloque os filmes o qual assistiu e dê notas de cada um.
+O RocketMovies é um site dedicado a servir de espaço para que o usuário coloque os filmes o qual assistiu e dê notas de cada um.
 ## Screenshots
 
-![App Screenshot](./assets/movieBG.png)
+![App Screenshot](./src/assets/movieBG.png)
 
 
 ## Autores
