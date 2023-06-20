@@ -30,6 +30,7 @@ export const Container = styled.div`
     overflow-y: auto;
     margin: 4.1rem 9rem 8.4rem 13rem;
     padding-right: 3rem;
+    padding-bottom: 0.1rem;
   }
 `;
 
@@ -61,7 +62,7 @@ export const Inputs = styled.div`
 
 export const Sections = styled.section`
   width: 100%;
-  height: 13.8rem;
+  min-height: 13.8rem;
 
   margin-top: 4rem;
   padding-bottom: 2.4rem;

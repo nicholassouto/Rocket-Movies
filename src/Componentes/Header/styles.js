@@ -24,11 +24,6 @@ export const Title = styled.div`
   color: ${({ theme }) => theme.COLORS.PINK};
 `;
 
-export const Search = styled.form`
-  width: 100%;
-  padding: 0 6.4rem;
-`;
-
 export const Profile = styled.div`
   display: flex;
   align-items: center;
@@ -39,15 +34,6 @@ export const Profile = styled.div`
     align-items: flex-end;
     margin-right: 0.9rem;
 
-    strong {
-      width: 12.5rem;
-      height: 1.8rem;
-      font-weight: 700;
-      font-size: 1.4rem;
-      line-height: 1.8rem;
-      color: ${({ theme }) => theme.COLORS.WHITE};
-    }
-
     span {
       width: 2.6rem;
       height: 1.8rem;
@@ -56,7 +42,24 @@ export const Profile = styled.div`
       line-height: 1.8rem;
       margin-right: 2.5rem;
       color: ${({ theme }) => theme.COLORS.GRAY};
+
+      :hover {
+        cursor: pointer;
+      }
     }
+  }
+`;
+
+export const ProfileNav = styled.div`
+  > strong {
+    display: flex;
+    align-items: center;
+    width: 12.5rem;
+    height: 1.8rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
   > img {

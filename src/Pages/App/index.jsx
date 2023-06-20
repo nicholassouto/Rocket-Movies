@@ -1,18 +1,71 @@
-import { Container, PageHead, Sections, Tag } from "./styles";
+import { Container, PageHead, Sections, Tag, Header, Profile, Title, Search, ProfileNav } from "./styles";
 import { AiOutlinePlus } from "react-icons/ai";
 import { ReactSVG } from "react-svg";
 import starSvg from "../../assets/star.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import { Header } from "../../Componentes/Header";
+import { useAuth } from "../../hooks/auth";
+
+import { api } from "../../services/api";
+import { useState, useEffect } from "react";
+
 import { Button } from "../../Componentes/Button";
 import { Section } from "../../Componentes/Section";
 import { Tags } from "../../Componentes/Tags";
+import avatarPlaceHolder from "../../assets/avatar_placeholder.svg";
+
+import { Input } from "../../Componentes/Input";
 
 export function App() {
+  const [search, setSearch] = useState("");
+  const [notes, setNotes] = useState([]);
+  const { signOut, user } = useAuth();
+
+  const navigation = useNavigate();
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder;
+
+  function handleSignOut() {
+    navigation("/");
+    signOut();
+  }
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const response = await api.get(`/notes?title=${search}`);
+      setNotes(response.data);
+    }
+
+    fetchNotes();
+  }, [search]);
+
   return (
     <Container>
-      <Header />
+      <Header>
+        <Title>
+          <h1>RocketMovies</h1>
+        </Title>
+        <Search>
+          <Input placeholder="Pesquisar pelo título" onChange={() => setSearch(e.target.value)} />
+        </Search>
+        <div>
+          <Profile>
+            <div>
+              <Link to="Profile">
+                <ProfileNav>
+                  <strong>{user.name}</strong>
+                </ProfileNav>
+              </Link>
+              <span onClick={handleSignOut}>Sair</span>
+            </div>
+            <Link to="Profile">
+              <ProfileNav>
+                <img src={avatarUrl} alt={user.name} />
+              </ProfileNav>
+            </Link>
+          </Profile>
+        </div>
+      </Header>
       <main>
         <PageHead>
           <h1>Meus filmes</h1>
