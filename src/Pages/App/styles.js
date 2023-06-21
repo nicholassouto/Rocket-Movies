@@ -13,6 +13,20 @@ export const Container = styled.div`
   > main {
     grid-area: content;
     overflow-y: auto;
+
+    ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.PINK};
+    border-radius: 8px;
+    border: none;
+  }
   }
 `;
 
@@ -39,17 +53,11 @@ export const PageHead = styled.header`
 `;
 
 export const Sections = styled.section`
-  width: fit-content;
   display: flex;
   flex-direction: column;
   margin: 3.76rem 10.6rem 2.4rem 12.3rem;
   gap: 2.4rem;
 
-  > div {
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_RED_PINK};
-    border-radius: 1.6rem;
-    padding: 3.2rem;
-  }
 `;
 
 export const Tag = styled.div`
@@ -139,4 +147,11 @@ export const ProfileNav = styled.div`
     height: 6.4rem;
     border-radius: 50%;
   }
+`;
+
+export const Notes = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
 `;

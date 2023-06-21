@@ -31,6 +31,20 @@ export const Container = styled.div`
     margin: 4.1rem 9rem 8.4rem 13rem;
     padding-right: 3rem;
     padding-bottom: 0.1rem;
+
+    ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.PINK};
+    border-radius: 8px;
+    border: none;
+  }
   }
 `;
 

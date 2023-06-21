@@ -5,7 +5,6 @@ import avatarPlaceHolder from "../../assets/avatar_placeholder.svg";
 
 import { api } from "../../services/api";
 
-import { Input } from "../Input";
 
 export function Header() {
   
@@ -17,9 +16,7 @@ export function Header() {
   function handleSignOut() {
     navigation("/");
     signOut();
-  }
-
-  
+  }  
 
   return (
     <Container>
