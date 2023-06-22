@@ -81,7 +81,6 @@ export function CreateMovie() {
             min="0"
             max="5"
             placeholder="Sua nota(de 0 a 5)"
-            value={rating}
             onChange={(e) => handleRatingChange(e)}
           />
         </Inputs>
