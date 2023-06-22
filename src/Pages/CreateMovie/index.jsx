@@ -12,7 +12,7 @@ import { Section } from "../../Componentes/Section";
 import { ButtonText } from "../../Componentes/ButtonText";
 import { TextArea } from "../../Componentes/TextArea";
 import { Input } from "../../Componentes/Input";
-import { NoteItem } from "../../Componentes/NoteItem/Index";
+import { NoteItem } from "../../Componentes/NoteItem";
 
 export function CreateMovie() {
   const [title, setTitle] = useState("");
@@ -43,8 +43,8 @@ export function CreateMovie() {
     if (!title || !description) {
       return alert("Algum dos campos não foi preenchido");
     }
-    if(tags.length < 1){
-      return alert("Adcione uma tag")
+    if (tags.length < 1) {
+      return alert("Adcione uma tag");
     }
     if (newTag) {
       return alert("Você deixou uma tag sem adcionar");
