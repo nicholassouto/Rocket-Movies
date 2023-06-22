@@ -44,10 +44,10 @@ export function CreateMovie() {
       return alert("Algum dos campos não foi preenchido");
     }
     if (tags.length < 1) {
-      return alert("Adcione uma tag");
+      return alert("Adcione um marcador");
     }
     if (newTag) {
-      return alert("Você deixou uma tag sem adcionar");
+      return alert("Você deixou um marcador sem adcionar");
     }
     await api.post("/notes", {
       title,
@@ -59,6 +59,10 @@ export function CreateMovie() {
     alert("Nota criada com sucesso!");
     navigate("/");
   }
+
+  const handleKeyDown = (event) => {
+    event.preventDefault();
+  };
 
   function handleDeleteData() {
     navigate("/");
@@ -81,6 +85,7 @@ export function CreateMovie() {
             min="0"
             max="5"
             placeholder="Sua nota(de 0 a 5)"
+            onKeyDown={handleKeyDown}
             onChange={(e) => handleRatingChange(e)}
           />
         </Inputs>
